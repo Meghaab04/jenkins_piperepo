@@ -20,7 +20,7 @@ pipeline {
             steps {
                 echo "Name : ${MY_VALUE}"
                 echo "Name : ${env.MY_VALUE}"
-                // echo "STAGE: ${STAGE}"
+                // echo "STAGE: ${STAGE}"               //Build fails since STAGE is environment variable declared in stage1 cannot be accessed here
                 // echo "STAGE: ${env.STAGE}"
                 
             }

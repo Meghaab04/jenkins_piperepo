@@ -1,0 +1,34 @@
+pipeline {
+    agent any
+    environment {
+        MY_NAME = 'Megha'
+    }
+    stages {
+        stage('STAGE1') {
+            steps {
+                echo "NAME: ${MY_NAME}"
+                echo "stage1 execution"
+            }
+        }
+        stage('STAGE2') {
+            steps {
+              echo "NAME: ${MY_NAME}"  
+              echo "stage2 execution"
+            }
+        }
+        stage('STAGE3') {
+            parallel {
+                stage('CHROME') {
+                    steps {
+                    echo "This is CHROME"
+                    }
+                }  
+                stage('EDGE') {
+                    steps {
+                        echo "This is EDGE"
+                    }
+                }
+            }
+        }
+    }
+}
