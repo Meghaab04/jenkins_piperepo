@@ -1,14 +1,16 @@
 pipeline {
     // agent { label 'slave2' }
-    agent { label 'slave1' }
+    // agent { label 'slave1' }
     stages {
         stage('STAGE1') {
+        agent { label 'slave1' }
             steps {
                 echo "This is the stage 1"    
             }
 
         }
         stage('STAGE2') {
+        agent { label 'slave2' }
             steps {
                 echo "This is the stage 2"
 
