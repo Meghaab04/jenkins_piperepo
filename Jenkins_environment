@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     environment {
         MY_VALUE = 'Megha'
     }
@@ -16,6 +15,7 @@ pipeline {
                     echo "STAGE: ${env.STAGE}"
 
             }
+        }
         stage('STAGE2') {
             steps {
                 echo "Name : ${MY_VALUE}"
