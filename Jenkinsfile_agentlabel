@@ -1,4 +1,5 @@
 pipeline {
+    agent none
     // agent { label 'slave2' }
     // agent { label 'slave1' }
     stages {
