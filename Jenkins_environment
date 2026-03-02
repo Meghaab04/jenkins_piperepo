@@ -20,8 +20,8 @@ pipeline {
             steps {
                 echo "Name : ${MY_VALUE}"
                 echo "Name : ${env.MY_VALUE}"
-                echo "STAGE: ${STAGE}"
-                echo "STAGE: ${env.STAGE}"
+                // echo "STAGE: ${STAGE}"
+                // echo "STAGE: ${env.STAGE}"
                 
             }
         }
