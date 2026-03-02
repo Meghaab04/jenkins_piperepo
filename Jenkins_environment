@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+
+    environment {
+        MY_VALUE = 'Megha'
+    }
+    stages {
+        stage('STAGE1') {
+            environment {
+                STAGE = 'stage1'
+            }
+            steps {
+                    echo "Name : ${MY_VALUE}"
+                    echo "Name : ${env.MY_VALUE}"
+                    echo "STAGE: ${STAGE}"
+                    echo "STAGE: ${env.STAGE}"
+
+            }
+        stage('STAGE2') {
+            steps {
+                echo "Name : ${MY_VALUE}"
+                echo "Name : ${env.MY_VALUE}"
+                echo "STAGE: ${STAGE}"
+                echo "STAGE: ${env.STAGE}"
+                
+            }
+        }
+    }
+}
