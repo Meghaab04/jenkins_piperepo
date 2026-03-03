@@ -5,10 +5,8 @@ pipeline {
             steps {
                 script {
                     try {
-                        
                         echo "This is stage 1"
                         exit 1
-                        
                     }
                     catch (err) {
                         echo "Error cought: ${err}"
