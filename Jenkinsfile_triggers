@@ -6,21 +6,7 @@ pipeline {
     environment {
         CURRENT_ENV = 'prod'
     }
-    // stages {
-    //     stage('CEHCKOUT_REPOA') {
-    //         steps {
-    //            checkout ([  $class: 'GitSCM',
-    //                         branches: [[name: '*/main']],
-    //                         userRemoteConfigs: [[credentialsId: 'aws_pem', 
-    //                         url: 'https://github.com/Meghaab04/jenkins_piperepo.git']]
-    //                     ])
-    //             sh '''
-    //                 echo GIT_BRANCH: $GIT_BRANCH
-    //                 echo BRANCH_NAME: $BRANCH_NAME
-    //             '''
-    //         }
-    //     }
-  
+    stages {
         stage('when environment') {
             when {
                 environment name: 'CURRENT_ENV', value: 'prod'
@@ -33,8 +19,6 @@ pipeline {
                     sleep 5
                 '''
             }
-        }
-
-        
-    // }
+        }      
+    }
 }
