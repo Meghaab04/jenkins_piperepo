@@ -13,7 +13,6 @@ pipeline {
                     catch (err) {
                         echo "Error cought: ${err}"
                         currentBuild.result = 'SUCCESS'
-                        currentStage.result = 'FAILURE'
                     }
                 }
             }
