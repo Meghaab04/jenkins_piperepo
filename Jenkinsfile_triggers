@@ -6,37 +6,21 @@ pipeline {
     environment {
         CURRENT_ENV = 'prod'
     }
-    stages {
-        stage('CEHCKOUT_REPOA') {
-            steps {
-               checkout ([  $class: 'GitSCM',
-                            branches: [[name: '*/main']],
-                            userRemoteConfigs: [[credentialsId: 'aws_pem', 
-                            url: 'https://github.com/Meghaab04/jenkins_piperepo.git']]
-                        ])
-                sh '''
-                    echo GIT_BRANCH: $GIT_BRANCH
-                    echo BRANCH_NAME: $BRANCH_NAME
-                '''
-            }
-        }
-
-        stage('STAGE1 When branch main') {
-            when {
-                expression {
-                    return env.GIT_BRANCH == 'origin/main'
-                }
-            }
-            steps {
-                echo "This is stage1 running"
-                sh ''' 
-                    pwd
-                    ls -lrt
-                    sleep 5
-                '''
-            }
-        }
-
+    // stages {
+    //     stage('CEHCKOUT_REPOA') {
+    //         steps {
+    //            checkout ([  $class: 'GitSCM',
+    //                         branches: [[name: '*/main']],
+    //                         userRemoteConfigs: [[credentialsId: 'aws_pem', 
+    //                         url: 'https://github.com/Meghaab04/jenkins_piperepo.git']]
+    //                     ])
+    //             sh '''
+    //                 echo GIT_BRANCH: $GIT_BRANCH
+    //                 echo BRANCH_NAME: $BRANCH_NAME
+    //             '''
+    //         }
+    //     }
+  
         stage('when environment') {
             when {
                 environment name: 'CURRENT_ENV', value: 'prod'
@@ -51,14 +35,6 @@ pipeline {
             }
         }
 
-        stage('when parameter') {
-            when {
-                expression { params.DEPLOY == true }
-            }
-            steps {
-                echo "This is FINAL running"
-                sh 'sleep 5'
-            }
-        }
-    }
+        
+    // }
 }
