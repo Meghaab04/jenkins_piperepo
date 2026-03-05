@@ -5,15 +5,15 @@ pipeline {
         // disableConcurrentBuilds()
         // disableConcurrentBuilds(abortPrevious: true)
         // disableResume()
-        retry(3)
-        // timeout(time: 2, unit:MINUTES)
+        // retry(3)
+        timeout(time: 1, unit:MINUTES)
     }
         stages {
             stage('STAGE1') {
                 agent {label 'slave2'}
                 steps {
                     echo "Hello world"
-                    exit 1
+                    sleep(100)
             }
         }
     }
