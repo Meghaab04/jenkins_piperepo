@@ -4,7 +4,7 @@ pipeline {
         // buildDiscarder(logRotator(numToKeepStr: '1'))
         // disableConcurrentBuilds()
         // disableConcurrentBuilds(abortPrevious: true)
-        // disableResume()
+        disableResume()
         // retry(3)
         // timeout(time: 1, unit:'MINUTES')
     // }
@@ -12,7 +12,7 @@ pipeline {
             stage('STAGE1') {
                 steps {
                     echo "Hello world"
-                    sleep(20)
+                    sleep(120)
             }
         }
     }
