@@ -1,8 +1,8 @@
 pipeline {
     agent none
     options {
-        // buildDiscarder(logRotator(numToKeepStr: '1'))
-        disableConcurrentBuilds()
+        buildDiscarder(logRotator(numToKeepStr: '1'))
+        // disableConcurrentBuilds()
         // disableConcurrentBuilds(abortPrevious: true)
         // disableResume()
         // retry(2)
