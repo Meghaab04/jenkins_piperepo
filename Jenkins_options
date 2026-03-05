@@ -1,9 +1,9 @@
 pipeline {
     agent none
     options {
-        buildDiscarder(logRotator(numToKeepStr: '1'))
+        // buildDiscarder(logRotator(numToKeepStr: '1'))
         // disableConcurrentBuilds()
-        // disableConcurrentBuilds(abortPrevious: true)
+        disableConcurrentBuilds(abortPrevious: true)
         // disableResume()
         // retry(2)
         // timeout(time: 2, unit:MINUTES)
@@ -13,7 +13,7 @@ pipeline {
                 agent {label 'slave2'}
                 steps {
                     echo "Hello world"
-                    sleep(20)
+                    sleep(5)
                 }
             }
         }
