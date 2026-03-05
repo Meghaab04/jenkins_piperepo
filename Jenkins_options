@@ -5,7 +5,7 @@ pipeline {
         // disableConcurrentBuilds()
         // disableConcurrentBuilds(abortPrevious: true)
         // disableResume()
-        retry(2)
+        retry(3)
         // timeout(time: 2, unit:MINUTES)
     }
         stages {
