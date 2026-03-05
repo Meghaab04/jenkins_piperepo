@@ -1,13 +1,13 @@
 pipeline {
     agent any
-    // options {
+    options {
         // buildDiscarder(logRotator(numToKeepStr: '1'))
         // disableConcurrentBuilds()
         // disableConcurrentBuilds(abortPrevious: true)
         disableResume()
         // retry(3)
         // timeout(time: 1, unit:'MINUTES')
-    // }
+    }
         stages {
             stage('STAGE1') {
                 steps {
