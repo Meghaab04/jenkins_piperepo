@@ -12,7 +12,7 @@ pipeline {
             stage('STAGE1') {
                 steps {
                     echo "Hello world"
-                    sleep(5)
+                    sleep(120)
             }
         }
     }
