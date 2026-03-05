@@ -1,5 +1,5 @@
 pipeline {
-    agent none
+    agent any
     options {
         // buildDiscarder(logRotator(numToKeepStr: '1'))
         // disableConcurrentBuilds()
@@ -10,10 +10,9 @@ pipeline {
     }
         stages {
             stage('STAGE1') {
-                agent {label 'slave2'}
                 steps {
                     echo "Hello world"
-                    sleep(1)
+                    sleep(5)
             }
         }
     }
